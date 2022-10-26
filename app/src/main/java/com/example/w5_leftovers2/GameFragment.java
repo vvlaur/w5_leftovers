@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -43,6 +44,10 @@ public class GameFragment extends Fragment {
                 if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u' || word.charAt(i) == 'y') {
                     counter = counter + 1;
                 }
+                if (word.charAt(i) == 's' || word.charAt(i) == 'z' || word.charAt(i) == 'p' || word.charAt(i) == 'x' || word.charAt(i) == 'q') {
+                    score = score * 2;
+                }
+
                 if (counter == 2) {
                     return "Thats Correct, +"; //score function
                 }
@@ -101,6 +106,7 @@ public class GameFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String ltr = (String) bn00.getText();
+                word = word + ltr;
 
             }
         });
@@ -154,7 +160,9 @@ public class GameFragment extends Fragment {
         sbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //score
+                String result = getScore(word);
+                Toast.makeText(getActivity(),  result,
+                        Toast.LENGTH_LONG).show();
             }
         });
         return view;
