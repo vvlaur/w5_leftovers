@@ -31,11 +31,11 @@ public class BottomFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       // View view = inflater.inflate(R.layout.fragment_game, container, false);
-       //myscore = (TextView) view.findViewById(R.id.scoretext);
-       //game = (Button) view.findViewById(R.id.newGame);
-       //return view;
-        return inflater.inflate(R.layout.fragment_bottom, container, false);
+       View view = inflater.inflate(R.layout.fragment_bottom, container, false);
+       myscore = (TextView) view.findViewById(R.id.scoretext);
+       game = (Button) view.findViewById(R.id.newGame);
+       return view;
+
 
     }
 }

@@ -2,6 +2,7 @@ package com.example.w5_leftovers2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -68,6 +69,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
         }*/
         else {
             for (int i = 0; i < word.length(); i++) {
+                score = score + 2;
                 if (word.charAt(i) == 'a' || word.charAt(i) == 'e' || word.charAt(i) == 'i' || word.charAt(i) == 'o' || word.charAt(i) == 'u' || word.charAt(i) == 'y') {
                     counter = counter + 1;
                 }
@@ -76,7 +78,8 @@ public class GameFragment extends Fragment implements View.OnClickListener {
                 }
 
                 if (counter == 2) {
-                    return "Thats Correct, +"; //score function
+                    String s = Integer.toString(score);
+                    return "Thats Correct, + " + s; //score function
                 }
             }
             score = score - 10;
@@ -130,7 +133,7 @@ public class GameFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_game, container, false);
