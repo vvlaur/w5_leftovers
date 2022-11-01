@@ -11,8 +11,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
-        android:layout_weight="3"
+        android:layout_margin="8dp"
         android:gravity="center"
         android:text="@string/hello_blank_fragment"
         android:textSize="20sp" />
@@ -21,10 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_weight="3"
         android:columnCount="4"
         android:paddingTop="8sp"
-        android:paddingBottom="16sp"
+        android:paddingBottom="8sp"
         android:rowCount="4">
 
 
@@ -133,19 +131,35 @@
         android:id="@+id/wordtext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="3"
         android:gravity="center"
-        android:paddingBottom="16sp"
+        android:paddingBottom="8sp"
         android:text=""
-        android:textSize="30sp" />
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/submit"
+    <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:text="Submit" />
+        android:columnCount="2"
+        android:rowCount="1">
 
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="left"
+            android:paddingRight="16dp"
+            android:text="Clear" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:text="Submit" />
+
+    </GridLayout>
 
 </LinearLayout>

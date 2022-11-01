@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.add(R.id.frameslayout, new GameFragment());
+        ft.add(R.id.frameslayout, new BottomFragment());
         ft.commit();
 
     }
